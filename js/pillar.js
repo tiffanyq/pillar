@@ -12,14 +12,9 @@ document.body.appendChild( renderer.domElement );
 
 // camera
 var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-camera.position.set(5, 10, 10);
+camera.position.set(5.000, 10.00, 10.00);
 camera.lookAt(0,0,0); // origin
 scene.add(camera);
-
-// disable scroll for better ux
-window.onscroll = function () {
-     window.scrollTo(0,0);
-   }
 
 // light: shine a light directly onto the column
 light = new THREE.PointLight(0xfefebe);
@@ -45,9 +40,14 @@ var pillar = new THREE.Mesh( geometry, materials );
 scene.add( pillar );
 
 // add orbit controls
-var controls = new THREE.OrbitControls(camera);
+var controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.damping = 0.2;
 controls.autoRotate = false;
+
+// disable scroll for better ux
+window.onscroll = function () {
+     window.scrollTo(0,0);
+   }
 
 // adjust for window resize
 function resize() {
@@ -76,6 +76,14 @@ function animate() {
 		var currRot = ((pillar.rotation.y*180/Math.PI)%360).toString().substring(0,5);
 		document.getElementById("yrotation").innerText = currRot;
 	}
+	if (document.getElementById("cam")) {
+		var camX = camera.position.x.toString().substring(0,5);
+		var camY = camera.position.y.toString().substring(0,5);
+		var camZ = camera.position.z.toString().substring(0,5);
+		var camCoord = '(' + camX + ', ' + camY + ', ' + camZ + ')';
+		document.getElementById("cam").innerText = camCoord;
+	}
+
 	requestAnimationFrame( animate );
 	renderer.render( scene, camera );
 }
