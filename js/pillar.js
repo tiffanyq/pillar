@@ -16,6 +16,11 @@ camera.position.set(5, 10, 10);
 camera.lookAt(0,0,0); // origin
 scene.add(camera);
 
+// disable scroll for better ux
+window.onscroll = function () {
+     window.scrollTo(0,0);
+   }
+
 // light: shine a light directly onto the column
 light = new THREE.PointLight(0xfefebe);
 light.position.set(0,10,4);
@@ -65,7 +70,11 @@ function animate() {
 	// make the pillar rotate around the y-axis
 	// if it's not being dragged
 	if (!mouseDown) {
-		pillar.rotation.y += -Math.PI/720;
+		pillar.rotation.y += Math.PI/1440;
+	}
+	if (document.getElementById("yrotation")) {
+		var currRot = ((pillar.rotation.y*180/Math.PI)%360).toString().substring(0,5);
+		document.getElementById("yrotation").innerText = currRot;
 	}
 	requestAnimationFrame( animate );
 	renderer.render( scene, camera );
