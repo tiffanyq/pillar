@@ -3,8 +3,28 @@
   <head>
   	<meta charset=utf-8>
   	<title>connect the dots and details</title>
+  	<style>
+  		#piece-title {
+  			bottom: 100px;
+  			right: 50px;
+  		}
+  		#instructions {
+  			bottom: 80px;
+  			right: 50px;
+  		}
+  		.label-text {
+  			 position: absolute;
+  			z-index: 1000;
+  			display: block;
+  			font-family: monospace;
+  			color: #000080;
+  			text-align: right;
+  		}
+  	</style>
   </head>
   <body style="margin: 0;">
+  	<div id="piece-title" class="label-text">connect the dots and details</div>
+  	<div id="instructions" class="label-text">click/tap to drag</div>
   	<script src="js/three.js"></script>
   	<script src="js/OrbitControls.js"></script>
   	<script src="js/pillar.js"></script>
