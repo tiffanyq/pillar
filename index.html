@@ -5,28 +5,34 @@
   	<title>connect the dots and details</title>
   	<style>
   		#piece-title {
-  			bottom: 380px;
-  			font-size: 20px;
+  			bottom: 400px;
+  			font-size: 24px;
   			background-color: #f0ead6;
   		}
   		#instructions {
-  			bottom: 350px;
+  			bottom: 370px;
   			background-color: #f0ead6;
   		}
   		#pillar-pos {
-  			bottom: 250px;
-  			background-color: #f0ead6;
-  		}
-  		#scene-pos {
-  			bottom: 220px;
+  			bottom: 300px;
   			background-color: #f0ead6;
   		}
   		#camera-pos {
-  			bottom: 190px;
+  			bottom: 260px;
   			background-color: #f0ead6;
   		}
   		#buchanan-pos {
-  			bottom: 50px;
+  			bottom: 190px;
+  			background-color: #eeeeee;
+  		}
+  		#actual-pos {
+  			bottom: 160px;
+  			color: #719192;
+  			font-size: 14px;
+  			background-color: #eeeeee;
+  		}
+  		#you-pos {
+  			bottom: 120px;
   			background-color: #eeeeee;
   		}
   		.label-text {
@@ -35,12 +41,11 @@
   			display: block;
   			font-family: monospace;
   			text-align: right;
-  			font-size: 16px;
+  			font-size: 18px;
   			right: 50px;
   			line-height: 20px;
   			padding: 5px 10px;
   		}
-
   		.title-color {
   			color: #3c3d47;
   		}
@@ -57,10 +62,10 @@
   	<div id="piece-title" class="label-text title-color">connect the dots and details</div>
   	<div id="instructions" class="label-text title-color">(click/tap to drag)</div>
   	<div id = "pillar-pos" class="label-text secondary-title-color">pillar coordinates: <span class="secondary-text">(0,0,0)</span></div>
-  	<div id = "scene-pos" class="label-text secondary-title-color">y-rotation, degrees: <span id="yrotation" class="secondary-text">0.000</span></div>
-  	<div id = "camera-pos" class="label-text secondary-title-color">camera position: <span id="cam" class="secondary-text">0.000</span></div>
-  	<div id = "buchanan-pos" class="label-text secondary-title-color"><p>'world' coordinates: <span class="secondary-text">49°16'05.9"N 123°15'15.6"W</span></p>
-  	<p>(buchanan building, ubc, vancouver, canada)</p></div>
+  	<div id = "camera-pos" class="label-text secondary-title-color">camera coordinates: <span id="cam" class="secondary-text">0.000</span></div>
+  	<div id = "buchanan-pos" class="label-text secondary-title-color">pillar coordinates: <span class="secondary-text">49°16'05.9"N 123°15'15.6"W</span></div>
+  	<div id = "you-pos" class="label-text secondary-title-color">camera coordinates:  <span class="secondary-text">where are you looking from?</span></div>
+  	<div id = "actual-pos" class="label-text secondary-title-color">(buchanan building, ubc, vancouver, bc, canada)</div>
   	<script src="js/three.js"></script>
   	<script src="js/OrbitControls.js"></script>
   	<script src="js/pillar.js"></script>

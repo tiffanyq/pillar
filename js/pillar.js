@@ -56,26 +56,8 @@ function resize() {
   camera.updateProjectionMatrix();
 }
 
-// global variable to store mouse state
-mouseDown = false;
-window.addEventListener('mouseup', e => {
-	mouseDown = false;
-});
-window.addEventListener('mousedown', e => {
-	mouseDown = true;
-});
-
 // update the scene
 function animate() {
-	// make the pillar rotate around the y-axis
-	// if it's not being dragged
-	if (!mouseDown) {
-		pillar.rotation.y += Math.PI/1440;
-	}
-	if (document.getElementById("yrotation")) {
-		var currRot = ((pillar.rotation.y*180/Math.PI)%360).toString().substring(0,5);
-		document.getElementById("yrotation").innerText = currRot;
-	}
 	if (document.getElementById("cam")) {
 		var camX = camera.position.x.toString().substring(0,5);
 		var camY = camera.position.y.toString().substring(0,5);
