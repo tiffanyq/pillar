@@ -59,9 +59,9 @@ function resize() {
 // update the scene
 function animate() {
 	if (document.getElementById("cam")) {
-		var camX = camera.position.x.toString().substring(0,5);
-		var camY = camera.position.y.toString().substring(0,5);
-		var camZ = camera.position.z.toString().substring(0,5);
+		var camX = Math.round(camera.position.x * 100) / 100;
+		var camY = Math.round(camera.position.y * 100) / 100;
+		var camZ = Math.round(camera.position.z * 100) / 100;
 		var camCoord = '(' + camX + ', ' + camY + ', ' + camZ + ')';
 		document.getElementById("cam").innerText = camCoord;
 	}
